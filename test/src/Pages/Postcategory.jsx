@@ -32,17 +32,17 @@ function Post({ onClick }) {
   useEffect(() => {
     setLoading(true);
     Axios.get(`${baseUrl}api/postes/category/${categories}`)
-        .then(({ data }) => {
-            setLoading(false);
-            setPostes(data);
-        })
-        .catch((e) => {
-            setLoading(false);
-            console.log(e.message);
-        });
-}, [categories]);
+      .then(({ data }) => {
+        setLoading(false);
+        setPostes(data);
+      })
+      .catch((e) => {
+        setLoading(false);
+        console.log(e.message);
+      });
+  }, [categories]);
 
-useEffect(() => {
+  useEffect(() => {
     const storedLogedStatus = localStorage.getItem("isLogedIn");
     console.log(storedLogedStatus);
     setisLogedIn(storedLogedStatus);
@@ -297,7 +297,7 @@ useEffect(() => {
                                           className="btn btn-apply-now"
                                           onClick={() => navigate("/login")}
                                         >
-                                         Postulez maintenant
+                                          Postulez maintenant
                                         </div>
                                       )}
                                     </div>
